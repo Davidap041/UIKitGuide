@@ -21,7 +21,7 @@
 		09C321942D11E2A3001196D9 /* FormButtonCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09C321932D11E2A3001196D9 /* FormButtonCollectionViewCell.swift */; };
 		09C321962D11E9AB001196D9 /* FormTextCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09C321952D11E9AB001196D9 /* FormTextCollectionViewCell.swift */; };
 		09C321982D11EB7F001196D9 /* FormDateCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09C321972D11EB7F001196D9 /* FormDateCollectionViewCell.swift */; };
-		09C3219B2D11EDF8001196D9 /* FormComponentLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09C3219A2D11EDF8001196D9 /* FormComponentLayout.swift */; };
+		09C3219B2D11EDF8001196D9 /* FormCompositionalLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09C3219A2D11EDF8001196D9 /* FormCompositionalLayout.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,7 +41,7 @@
 		09C321932D11E2A3001196D9 /* FormButtonCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormButtonCollectionViewCell.swift; sourceTree = "<group>"; };
 		09C321952D11E9AB001196D9 /* FormTextCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormTextCollectionViewCell.swift; sourceTree = "<group>"; };
 		09C321972D11EB7F001196D9 /* FormDateCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormDateCollectionViewCell.swift; sourceTree = "<group>"; };
-		09C3219A2D11EDF8001196D9 /* FormComponentLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormComponentLayout.swift; sourceTree = "<group>"; };
+		09C3219A2D11EDF8001196D9 /* FormCompositionalLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormCompositionalLayout.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,7 +129,7 @@
 		09C321992D11EDE2001196D9 /* Layout */ = {
 			isa = PBXGroup;
 			children = (
-				09C3219A2D11EDF8001196D9 /* FormComponentLayout.swift */,
+				09C3219A2D11EDF8001196D9 /* FormCompositionalLayout.swift */,
 			);
 			path = Layout;
 			sourceTree = "<group>";
@@ -210,7 +210,7 @@
 				09C321912D11E1E5001196D9 /* UICollectionViewCell+CleanUp.swift in Sources */,
 				0910471D2D10E69A00AFBFF7 /* ViewController.swift in Sources */,
 				091047192D10E69A00AFBFF7 /* AppDelegate.swift in Sources */,
-				09C3219B2D11EDF8001196D9 /* FormComponentLayout.swift in Sources */,
+				09C3219B2D11EDF8001196D9 /* FormCompositionalLayout.swift in Sources */,
 				09C321962D11E9AB001196D9 /* FormTextCollectionViewCell.swift in Sources */,
 				0910471B2D10E69A00AFBFF7 /* SceneDelegate.swift in Sources */,
 				09C321892D11D466001196D9 /* FormModel.swift in Sources */,
