@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Combine
 
 final class FormButtonCollectionViewCell: UICollectionViewCell {
  
@@ -14,26 +15,36 @@ final class FormButtonCollectionViewCell: UICollectionViewCell {
         btn.translatesAutoresizingMaskIntoConstraints = false
         btn.setTitleColor(.white, for: .normal)
         btn.backgroundColor = .systemBlue
+        btn.layer.cornerRadius = 8
         btn.titleLabel?.font = .systemFont(ofSize: 16, weight: .bold)
         return btn
     }()
     
-   
+    private var item: ButtonFormItem?
+    private(set) var subject = PassthroughSubject<FormField,Never>()
+    
     func bind(_ item: FormComponent) {
-        guard let item = item as? ButtonFormComponent else {return}
+        guard let item = item as? ButtonFormItem else {return}
+        self.item = item
         setup(item: item)
     }
     
     override func prepareForReuse() {
         super.prepareForReuse()
         removeViews()
+        self.item = nil
     }
 }
 
 private extension FormButtonCollectionViewCell {
-    func setup(item: ButtonFormComponent){
+    
+    func setup(item: ButtonFormItem){
+        
+        // set elements
+        actionBtn.addTarget(self, action: #selector(actionBtnTapped), for: .touchUpInside)
         actionBtn.setTitle(item.title, for: .normal)
         
+        // set hierarchy
         contentView.addSubview(actionBtn)
         
         // set constraints
@@ -43,4 +54,9 @@ private extension FormButtonCollectionViewCell {
         actionBtn.topAnchor.constraint(equalTo: contentView.topAnchor).isActive = true
         actionBtn.bottomAnchor.constraint(equalTo: contentView.bottomAnchor).isActive = true
     }
+    @objc func actionBtnTapped(){
+        guard let  item = item else { return }
+        self.subject.send(item.formID)
+    }
+    
 }

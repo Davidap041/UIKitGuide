@@ -14,6 +14,10 @@
 		091047232D10E69B00AFBFF7 /* UiKitGuide.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 091047212D10E69B00AFBFF7 /* UiKitGuide.xcdatamodeld */; };
 		091047252D10E69F00AFBFF7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 091047242D10E69F00AFBFF7 /* Assets.xcassets */; };
 		091047282D10E69F00AFBFF7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 091047262D10E69F00AFBFF7 /* LaunchScreen.storyboard */; };
+		09605EAB2D1F2473008F9DBC /* RegexFormItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09605EAA2D1F2473008F9DBC /* RegexFormItem.swift */; };
+		09605EAE2D1F24ED008F9DBC /* ValidationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09605EAD2D1F24ED008F9DBC /* ValidationError.swift */; };
+		09605EB12D1F5938008F9DBC /* RegexPatterns.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09605EB02D1F5938008F9DBC /* RegexPatterns.swift */; };
+		09605EB52D1F63C5008F9DBC /* UiTextField+Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09605EB42D1F63C5008F9DBC /* UiTextField+Validation.swift */; };
 		09C321892D11D466001196D9 /* FormModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09C321882D11D466001196D9 /* FormModel.swift */; };
 		09C3218C2D11DFE0001196D9 /* FormContentBuilderImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09C3218B2D11DFE0001196D9 /* FormContentBuilderImpl.swift */; };
 		09C3218F2D11E175001196D9 /* UICollectionView+Identifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09C3218E2D11E175001196D9 /* UICollectionView+Identifier.swift */; };
@@ -34,6 +38,10 @@
 		091047242D10E69F00AFBFF7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		091047272D10E69F00AFBFF7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		091047292D10E69F00AFBFF7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		09605EAA2D1F2473008F9DBC /* RegexFormItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegexFormItem.swift; sourceTree = "<group>"; };
+		09605EAD2D1F24ED008F9DBC /* ValidationError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationError.swift; sourceTree = "<group>"; };
+		09605EB02D1F5938008F9DBC /* RegexPatterns.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegexPatterns.swift; sourceTree = "<group>"; };
+		09605EB42D1F63C5008F9DBC /* UiTextField+Validation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UiTextField+Validation.swift"; sourceTree = "<group>"; };
 		09C321882D11D466001196D9 /* FormModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormModel.swift; sourceTree = "<group>"; };
 		09C3218B2D11DFE0001196D9 /* FormContentBuilderImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormContentBuilderImpl.swift; sourceTree = "<group>"; };
 		09C3218E2D11E175001196D9 /* UICollectionView+Identifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Identifier.swift"; sourceTree = "<group>"; };
@@ -74,11 +82,12 @@
 		091047172D10E69A00AFBFF7 /* UiKitGuide */ = {
 			isa = PBXGroup;
 			children = (
+				09605EA82D1F242B008F9DBC /* Regex */,
 				09C321992D11EDE2001196D9 /* Layout */,
-				09C321922D11E26F001196D9 /* CollectionViewCells */,
-				09C3218D2D11E14E001196D9 /* Extensions */,
-				09C3218A2D11DFB7001196D9 /* Form Content */,
+				09C3218A2D11DFB7001196D9 /* Builder */,
 				09C321872D11D458001196D9 /* Model */,
+				09C3218D2D11E14E001196D9 /* Extensions */,
+				09C321922D11E26F001196D9 /* Views */,
 				091047182D10E69A00AFBFF7 /* AppDelegate.swift */,
 				0910471A2D10E69A00AFBFF7 /* SceneDelegate.swift */,
 				0910471C2D10E69A00AFBFF7 /* ViewController.swift */,
@@ -91,6 +100,40 @@
 			path = UiKitGuide;
 			sourceTree = "<group>";
 		};
+		09605EA82D1F242B008F9DBC /* Regex */ = {
+			isa = PBXGroup;
+			children = (
+				09605EAF2D1F5927008F9DBC /* Patterns */,
+				09605EAC2D1F24DB008F9DBC /* Error */,
+				09605EA92D1F2439008F9DBC /* Model */,
+			);
+			path = Regex;
+			sourceTree = "<group>";
+		};
+		09605EA92D1F2439008F9DBC /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				09605EAA2D1F2473008F9DBC /* RegexFormItem.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		09605EAC2D1F24DB008F9DBC /* Error */ = {
+			isa = PBXGroup;
+			children = (
+				09605EAD2D1F24ED008F9DBC /* ValidationError.swift */,
+			);
+			path = Error;
+			sourceTree = "<group>";
+		};
+		09605EAF2D1F5927008F9DBC /* Patterns */ = {
+			isa = PBXGroup;
+			children = (
+				09605EB02D1F5938008F9DBC /* RegexPatterns.swift */,
+			);
+			path = Patterns;
+			sourceTree = "<group>";
+		};
 		09C321872D11D458001196D9 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -99,12 +142,12 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		09C3218A2D11DFB7001196D9 /* Form Content */ = {
+		09C3218A2D11DFB7001196D9 /* Builder */ = {
 			isa = PBXGroup;
 			children = (
 				09C3218B2D11DFE0001196D9 /* FormContentBuilderImpl.swift */,
 			);
-			path = "Form Content";
+			path = Builder;
 			sourceTree = "<group>";
 		};
 		09C3218D2D11E14E001196D9 /* Extensions */ = {
@@ -112,18 +155,19 @@
 			children = (
 				09C3218E2D11E175001196D9 /* UICollectionView+Identifier.swift */,
 				09C321902D11E1E5001196D9 /* UICollectionViewCell+CleanUp.swift */,
+				09605EB42D1F63C5008F9DBC /* UiTextField+Validation.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
 		};
-		09C321922D11E26F001196D9 /* CollectionViewCells */ = {
+		09C321922D11E26F001196D9 /* Views */ = {
 			isa = PBXGroup;
 			children = (
 				09C321932D11E2A3001196D9 /* FormButtonCollectionViewCell.swift */,
 				09C321952D11E9AB001196D9 /* FormTextCollectionViewCell.swift */,
 				09C321972D11EB7F001196D9 /* FormDateCollectionViewCell.swift */,
 			);
-			path = CollectionViewCells;
+			path = Views;
 			sourceTree = "<group>";
 		};
 		09C321992D11EDE2001196D9 /* Layout */ = {
@@ -208,11 +252,15 @@
 				09C321982D11EB7F001196D9 /* FormDateCollectionViewCell.swift in Sources */,
 				09C3218F2D11E175001196D9 /* UICollectionView+Identifier.swift in Sources */,
 				09C321912D11E1E5001196D9 /* UICollectionViewCell+CleanUp.swift in Sources */,
+				09605EAB2D1F2473008F9DBC /* RegexFormItem.swift in Sources */,
+				09605EB52D1F63C5008F9DBC /* UiTextField+Validation.swift in Sources */,
 				0910471D2D10E69A00AFBFF7 /* ViewController.swift in Sources */,
 				091047192D10E69A00AFBFF7 /* AppDelegate.swift in Sources */,
 				09C3219B2D11EDF8001196D9 /* FormCompositionalLayout.swift in Sources */,
 				09C321962D11E9AB001196D9 /* FormTextCollectionViewCell.swift in Sources */,
 				0910471B2D10E69A00AFBFF7 /* SceneDelegate.swift in Sources */,
+				09605EAE2D1F24ED008F9DBC /* ValidationError.swift in Sources */,
+				09605EB12D1F5938008F9DBC /* RegexPatterns.swift in Sources */,
 				09C321892D11D466001196D9 /* FormModel.swift in Sources */,
 				091047232D10E69B00AFBFF7 /* UiKitGuide.xcdatamodeld in Sources */,
 				09C321942D11E2A3001196D9 /* FormButtonCollectionViewCell.swift in Sources */,
